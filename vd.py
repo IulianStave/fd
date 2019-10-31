@@ -14,10 +14,13 @@ while True:
     if check:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         cv2.imshow("Capturing webcam", gray)
-        cv2.imwrite("imgc"+str(countFrames)+".jpg",gray)
+        cv2.imwrite("imgcapt"+str(countFrames)+".jpg", gray)
         key = cv2.waitKey(1000)
         if key == ord('q'):
             break
     else:
         break
 video.release()
+
+print ("{} frames captured and saved".format(countFrames))
+
